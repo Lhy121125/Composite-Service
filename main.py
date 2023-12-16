@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 import asyncio
 import aiohttp
 import requests
@@ -19,7 +19,6 @@ async def fetch_data(session, url, service_name):
 # The async function
 async def get_dashboard_data(user_id):
     async with aiohttp.ClientSession() as session:
-        # TODO: Filled the url 2 with cover letter one
         user_url = f"http://ec2-13-59-146-34.us-east-2.compute.amazonaws.com:8012/users/{user_id}"
         cover_letter_url = f"https://modular-granite-402517.uc.r.appspot.com/{user_id}/get_template_count"
 
