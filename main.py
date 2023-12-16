@@ -20,7 +20,7 @@ async def fetch_data(session, url, service_name):
 async def get_dashboard_data(user_id):
     async with aiohttp.ClientSession() as session:
         # TODO: Filled the url 2 with cover letter one
-        user_url = f"http://ec2-18-116-37-42.us-east-2.compute.amazonaws.com:8012/users/{user_id}"
+        user_url = f"http://ec2-13-59-146-34.us-east-2.compute.amazonaws.com:8012/users/{user_id}"
         cover_letter_url = f"https://modular-granite-402517.uc.r.appspot.com/{user_id}/get_template_count"
 
         user_task = asyncio.create_task(fetch_data(session, user_url, "Micro-service 1"))
@@ -55,7 +55,7 @@ def fetch_data_sync(url):
 # The synchronized function
 @app.route('/get-user-details/<user_id>', methods=['GET'])
 def get_user_details(user_id):
-    user_url = f"http://ec2-18-116-37-42.us-east-2.compute.amazonaws.com:8012/users/{user_id}"
+    user_url = f"http://ec2-13-59-146-34.us-east-2.compute.amazonaws.com:8012/users/{user_id}"
     cover_letter_url = f"https://modular-granite-402517.uc.r.appspot.com/{user_id}/get_template_count"
 
     result = {}
