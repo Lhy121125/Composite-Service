@@ -12,6 +12,10 @@ format:
 	black *.py
 
 deploy:
-	echo "deploy goes here"
+	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 149601685977.dkr.ecr.us-east-2.amazonaws.com
+	docker build -t composite-service .
+	docker tag composite-service:latest 149601685977.dkr.ecr.us-east-2.amazonaws.com/composite-service:latest
+	docker push 149601685977.dkr.ecr.us-east-2.amazonaws.com/composite-service:latest
+	
 
-all: install lint test format deploye
+all: install lint test format deploy
