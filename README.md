@@ -11,6 +11,7 @@ Composite Service for Cloud Computing
 * [main.py] (https://github.com/Lhy121125/Composite-Service/blob/main/main.py)
 
 # How to run it
+# Typing these in terminal
 1. Create a virtual environment: `python3 -m venv env`
 2. Activate the environment: `souce env/bin/activate`
 3. clone project then run `make all`
